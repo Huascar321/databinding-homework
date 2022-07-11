@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'databinding-homework';
+  oddNumbers: number[] = [];
+  evenNumbers: number[] = [];
+
+  onGameStarted(data: {incrementalNumber: number}) {
+    if (data.incrementalNumber % 2 === 0) {
+      this.oddNumbers.push(data.incrementalNumber);
+    } else {
+      this.evenNumbers.push(data.incrementalNumber);
+    }
+  }
 }
